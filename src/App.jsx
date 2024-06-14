@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 // Import our components
-import MovieDisplay from "./components/MovieDisplay.jsx";
-import Form from "./components/Form.jsx";
+import MovieDisplay from "./components/MovieDisplay";
+import Form from "./components/Form";
 
 export default function App() {
-  // Constant with your API Key
+  // Variable with your API Key
   const apiKey = "f2b55bb0";
 
   // State to hold movie data
@@ -25,10 +25,11 @@ export default function App() {
   };
 
   // We pass the getMovie function as a prop called moviesearch
+  // We pass movie as props to movie display
   return (
     <div className="App">
       <Form moviesearch={getMovie} />
-      <MovieDisplay />
+      <MovieDisplay movie={movie} />
     </div>
   );
 }
